@@ -1,0 +1,32 @@
+# .air.toml
+
+# MAIN settings
+root = "."                         # Root of your project
+tmp_dir = "tmp"                   # Temporary directory for builds
+cmd = "go run main.go"           # Command to run your app
+
+# BUILD settings
+[build]
+  bin = "tmp/main"               # Compiled binary location
+  cmd = "go build -o tmp/main ." # Build command
+  include_ext = ["go"]          # Only watch .go files
+  exclude_dir = ["tmp", "vendor", "node_modules"]
+  exclude_file = []
+  exclude_regex = []
+  follow_symlink = false
+
+# LOG settings
+[log]
+  time = true
+
+# COLOR settings
+[color]
+  main = "yellow"
+  watcher = "cyan"
+  build = "green"
+  runner = "magenta"
+  error = "red"
+
+# MISC
+[misc]
+  clean_on_exit = true
